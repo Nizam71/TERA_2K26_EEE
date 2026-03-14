@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERA 2K26 - Tech Fest</title>
+    <!-- Modern Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Floating Shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+
+    <!-- Navbar Section (25% Height) -->
+    <nav class="navbar fade-up-initial">
+        <div class="glitch-wrapper">
+            <h1 class="hero-title" data-text="TERA 2K26">TERA 2K26</h1>
+        </div>
+        <div class="event-details">
+            <div class="detail-badge">
+                <span class="icon">📅</span>
+                <span class="text">April 10</span>
+            </div>
+            <div class="detail-badge">
+                <span class="icon">🕒</span>
+                <span class="text">9:30 AM</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main id="main-content">
+        <!-- Categories View (Initial State) -->
+        <section id="categories-view" class="categories-container fade-up-initial">
+            <div class="category-card tech-category" onclick="showEvents('tech-events-view')">
+                <div class="category-content">
+                    <h2>Technical Events</h2>
+                    <div class="fee">Registration Fee: ₹100</div>
+                    <div class="click-hint">Click to View Events <span class="arrow">↓</span></div>
+                </div>
+                <div class="glow-bg"></div>
+            </div>
+
+            <div class="category-card non-tech-category" onclick="showEvents('non-tech-events-view')">
+                <div class="category-content">
+                    <h2>Non-Technical Events</h2>
+                    <div class="fee">Registration Fee: ₹50</div>
+                    <div class="click-hint">Click to View Events <span class="arrow">↓</span></div>
+                </div>
+                <div class="glow-bg"></div>
+            </div>
+        </section>
+
+        <!-- Detailed Events Views (Hidden initially) -->
+        <div id="events" class="events-container hidden">
+
+            <!-- Technical Events Division -->
+            <section id="tech-events-view" class="event-division tech-division fade-up hidden">
+                <button class="back-btn" onclick="showCategories()">
+                    <span class="arrow">←</span> Back to Categories
+                </button>
+                <div class="division-header">
+                    <h2 class="section-title">Technical Events</h2>
+                </div>
+
+                <div class="events-grid">
+                    <!-- Event 1 -->
+                    <div class="event-card fade-up">
+                        <div class="card-inner">
+                            <div class="card-header tech-header">
+                                <h3>Project Expo</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="fee-badge">Registration Fee: ₹100</div>
+                                <p class="event-desc">Showcase your innovative projects.</p>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzGUJM53vvG74MdG4vonESWywnJ4dD8Z9s6lJjXUOSEz9tBg/viewform?usp=header"
+                                    target="_blank" class="register-btn glow-btn tech-btn"
+                                    style="text-decoration: none; display: inline-block; text-align: center;">
+                                    <span>Register</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="event-card fade-up">
+                        <div class="card-inner">
+                            <div class="card-header tech-header">
+                                <h3>Paper Presentation</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="fee-badge">Registration Fee: ₹100</div>
+                                <p class="event-desc">Present your research papers.</p>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzGUJM53vvG74MdG4vonESWywnJ4dD8Z9s6lJjXUOSEz9tBg/viewform?usp=header"
+                                    target="_blank" class="register-btn glow-btn tech-btn"
+                                    style="text-decoration: none; display: inline-block; text-align: center;">
+                                    <span>Register</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="event-card fade-up">
+                        <div class="card-inner">
+                            <div class="card-header tech-header">
+                                <h3>Poster</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="fee-badge">Registration Fee: ₹100</div>
+                                <p class="event-desc">Visually communicate concepts.</p>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzGUJM53vvG74MdG4vonESWywnJ4dD8Z9s6lJjXUOSEz9tBg/viewform?usp=header"
+                                    target="_blank" class="register-btn glow-btn tech-btn"
+                                    style="text-decoration: none; display: inline-block; text-align: center;">
+                                    <span>Register</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glow-bg"></div>
+            </section>
+
+            <!-- Non-Technical Events Division -->
+            <section id="non-tech-events-view" class="event-division non-tech-division fade-up hidden">
+                <button class="back-btn" onclick="showCategories()">
+                    <span class="arrow">←</span> Back to Categories
+                </button>
+                <div class="division-header">
+                    <h2 class="section-title">Non-Technical Events</h2>
+                </div>
+
+                <div class="events-grid">
+                    <!-- Event 1 -->
+                    <div class="event-card fade-up">
+                        <div class="card-inner">
+                            <div class="card-header non-tech-header">
+                                <h3>Esports</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="fee-badge">Registration Fee: ₹50</div>
+                                <p class="event-desc">Battle it out in popular games.</p>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzGUJM53vvG74MdG4vonESWywnJ4dD8Z9s6lJjXUOSEz9tBg/viewform?usp=header"
+                                    target="_blank" class="register-btn glow-btn non-tech-btn"
+                                    style="text-decoration: none; display: inline-block; text-align: center;">
+                                    <span>Register</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="event-card fade-up">
+                        <div class="card-inner">
+                            <div class="card-header non-tech-header">
+                                <h3>Lumino Lights</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="fee-badge">Registration Fee: ₹50</div>
+                                <p class="event-desc">Dazzling light coordination event.</p>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzGUJM53vvG74MdG4vonESWywnJ4dD8Z9s6lJjXUOSEz9tBg/viewform?usp=header"
+                                    target="_blank" class="register-btn glow-btn non-tech-btn"
+                                    style="text-decoration: none; display: inline-block; text-align: center;">
+                                    <span>Register</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="event-card fade-up">
+                        <div class="card-inner">
+                            <div class="card-header non-tech-header">
+                                <h3>Mudder Mystery</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="fee-badge">Registration Fee: ₹50</div>
+                                <p class="event-desc">Solve clues and escape.</p>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzGUJM53vvG74MdG4vonESWywnJ4dD8Z9s6lJjXUOSEz9tBg/viewform?usp=header"
+                                    target="_blank" class="register-btn glow-btn non-tech-btn"
+                                    style="text-decoration: none; display: inline-block; text-align: center;">
+                                    <span>Register</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 4 -->
+                    <div class="event-card fade-up">
+                        <div class="card-inner">
+                            <div class="card-header non-tech-header">
+                                <h3>Quiz</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="fee-badge">Registration Fee: ₹50</div>
+                                <p class="event-desc">Test your general knowledge.</p>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzGUJM53vvG74MdG4vonESWywnJ4dD8Z9s6lJjXUOSEz9tBg/viewform?usp=header"
+                                    target="_blank" class="register-btn glow-btn non-tech-btn"
+                                    style="text-decoration: none; display: inline-block; text-align: center;">
+                                    <span>Register</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 5 -->
+                    <div class="event-card fade-up">
+                        <div class="card-inner">
+                            <div class="card-header non-tech-header">
+                                <h3>Circuit Debugging</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="fee-badge">Registration Fee: ₹50</div>
+                                <p class="event-desc">Find faults in simple loops.</p>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzGUJM53vvG74MdG4vonESWywnJ4dD8Z9s6lJjXUOSEz9tBg/viewform?usp=header"
+                                    target="_blank" class="register-btn glow-btn non-tech-btn"
+                                    style="text-decoration: none; display: inline-block; text-align: center;">
+                                    <span>Register</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glow-bg"></div>
+            </section>
+        </div> <!-- End of events container wrapper -->
+    </main>
+
+    <footer>
+        <p>&copy; 2K26 TERA Tech Fest. Built By Nizam</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
